@@ -1,0 +1,6 @@
+ASSETS_PATH = 'assets'
+DAILY_STOCK_LIST_NAME = 'daily_stock_list_{}.csv'
+DAILY_STOCK_PATH = 'daily_stock'
+STOCK_NUMBER_COLUMN = '證券代號'
+STOCK_NAME_COLUMN = '證券名稱'
+STOCK_LIST_NAME = 'stock_list.csv'
