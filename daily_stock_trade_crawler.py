@@ -3,7 +3,7 @@ import pandas
 from io import StringIO
 import os
 import datetime
-from src.Constant_Field import DAILY_STOCK_LIST_NAME,DAILY_STOCK_PATH
+from src.Constant_Field import DAILY_STOCK_LIST_NAME,DAILY_STOCK_TRADE_PATH
 
 current_time = datetime.datetime.now()
 
@@ -15,4 +15,4 @@ data = response.text
 mystr = StringIO(data)
 df = pandas.read_csv(mystr)
 # 儲存資料
-df.to_csv(os.path.join(DAILY_STOCK_PATH, DAILY_STOCK_LIST_NAME.format(current_time.date())), index= False)
+df.to_csv(os.path.join(DAILY_STOCK_TRADE_PATH, DAILY_STOCK_LIST_NAME.format(current_time.date())), index= False)
