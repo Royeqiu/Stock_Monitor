@@ -1,3 +1,8 @@
+class Market_Stock_Constant():
+    TW_WEIGHTED_INDEX_ID = '^TWII'
+    TW_WEIGHTED_INDEX_NAME = '台灣加權指數'
+    MARKET_INDEX_NAME = 'market_index.csv'
+    MARKET_INDEX_PATH = 'market_index/'
 
 class Daily_Stock_Constant():
     DAILY_STOCK_LIST_NAME = 'daily_stock_list_{}.csv'
@@ -12,9 +17,11 @@ class Stock_Trade_Constant():
     STOCK_LOW_COLUMN = 'LOW'
     STOCK_VOLUME_DIVIDENDS_COLUMN = 'Dividends'
     STOCK_SPLITS_COLUMN = 'Stock Splits'
+    STOCK_DATE_COLUMN = 'Date'
 class History_Stock_Constant():
     HISTORY_STOCK_LIST_NAME = 'history_data.h5'
     HISTORY_STOCK_TRADE_PATH = 'history_stock/'
+
 class General_Constant():
     ASSETS_PATH = 'assets/'
     STOCK_LIST_FILE_NAME = 'stock_list.csv'
@@ -23,3 +30,10 @@ class Index_Class_Constant():
     MEAN_INDEX_NAME = 'mean_index'
     INDEX_HISTORY_STOCK_PATH = 'index_history_stock/'
     INDEX_HISTORY_STOCK_NAME = 'index_history_stock.h5'
+
+class Technological_Index_Constant():
+
+    class Mean_Stock_Index():
+        index_names = ["20_means","30_means","50_means","100_means","200_means"]
+        mean_day_range = [20,30,50,100,200]
+

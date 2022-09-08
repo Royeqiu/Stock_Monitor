@@ -17,4 +17,3 @@ for i in stock_list_df.index:
         os.mkdir(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH)
     stock_df.to_hdf(os.path.join(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH, Index_Class_Constant.INDEX_HISTORY_STOCK_NAME), mode ='a', key = stock_id)
 
-#stock_index_pipeliner.calculate_index()

@@ -16,6 +16,7 @@ for i in stock_list.index:
     stock_id = stock_list.loc[i, Stock_Trade_Constant.STOCK_NUMBER_COLUMN] + '.TW'
     data = yf.Ticker(stock_id)
     stock_df = data.history(period ='max')
+    stock_df = stock_df.reset_index(level = 0)
     if not os.path.exists(History_Stock_Constant.HISTORY_STOCK_TRADE_PATH):
         os.mkdir(History_Stock_Constant.HISTORY_STOCK_TRADE_PATH)
-    stock_df.to_hdf(os.path.join(History_Stock_Constant.HISTORY_STOCK_TRADE_PATH, History_Stock_Constant.HISTORY_STOCK_LIST_NAME, mode ='a', key = stock_id))
+    stock_df.to_hdf(os.path.join(History_Stock_Constant.HISTORY_STOCK_TRADE_PATH, History_Stock_Constant.HISTORY_STOCK_LIST_NAME), mode ='a', key = stock_id)
