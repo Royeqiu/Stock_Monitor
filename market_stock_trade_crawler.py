@@ -9,4 +9,4 @@ market_df = data.history(period ='max')
 market_df = market_df.reset_index(level = 0)
 if not os.path.exists(Market_Stock_Constant.MARKET_INDEX_PATH):
     os.mkdir(Market_Stock_Constant.MARKET_INDEX_PATH)
-market_df.to_csv(os.path.join(Market_Stock_Constant.MARKET_INDEX_PATH, Market_Stock_Constant.MARKET_INDEX_NAME), index = False)
+market_df.to_csv(os.path.join(Market_Stock_Constant.MARKET_INDEX_PATH, Market_Stock_Constant.MARKET_BASE_INDEX_NAME), index = False)

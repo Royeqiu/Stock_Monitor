@@ -1,6 +1,6 @@
 from src.Index_Class_Loader import Index_Class_Loader
 import pandas as pd
-class Stock_Index_Pipeliner():
+class Stock_Index_Pipeline():
 
     def __init__(self,pipelines:list):
         self.pipelines = pipelines
@@ -16,4 +16,5 @@ class Stock_Index_Pipeliner():
             index_names, index_serieses = index_class.calculate_index(copied_stock_trade_df)
             for index_name, index_series in zip(index_names,index_serieses):
                 copied_stock_trade_df[index_name] = index_series
+
         return copied_stock_trade_df
