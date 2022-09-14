@@ -35,8 +35,16 @@ class Index_Class_Constant():
     ADL_INDEX_NAME = 'ADL_Index'
 
 class Technological_Index_Constant():
-
-    class Mean_Stock_Index():
-        index_names = ["20_means","30_means","50_means","100_means","200_means"]
-        mean_day_range = [20,30,50,100,200]
+    class Basic_Market_Index_Constant():
+        TEN_DAYS_RANGE = 10
+        TWENTY_DAYS_RANGE = 20
+        THIRTY_DAYS_RANGE = 30
+        FIFTY_DAYS_RANGE = 50
+        ONE_HUNDRED_DAYS_RANGE = 100
+        TWO_HUNDRED_DAYS_RANGE = 200
+    class Advance_Decline_Line_Market_Index_Constant():
+        INDEX_NAMES = ["20_ADL", "30_ADL", "50_ADL", "100_ADL", "200_ADL"]
+    class Mean_Stock_Index_Constant():
+        INDEX_NAMES = ["20_means", "30_means", "50_means", "100_means", "200_means"]
+        MEAN_DAY_RANGE = [20, 30, 50, 100, 200]
 

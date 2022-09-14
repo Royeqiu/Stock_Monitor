@@ -6,7 +6,9 @@ import os
 stock_list_df = pd.read_csv(os.path.join(General_Constant.ASSETS_PATH,General_Constant.STOCK_LIST_FILE_NAME))
 pipelines = [Index_Class_Constant.MEAN_INDEX_NAME]
 stock_index_pipeliner = Stock_Index_Pipeline(pipelines)
-
+index_history_file = os.path.join(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH, Index_Class_Constant.INDEX_HISTORY_STOCK_NAME)
+if os.path.exists(index_history_file):
+    os.remove(index_history_file)
 for i in stock_list_df.index:
     if i % 100 == 0:
         print('{} stock history has been calcuated {}'.format(i,','.join(pipelines)))
@@ -15,5 +17,5 @@ for i in stock_list_df.index:
     appended_stock_df = stock_index_pipeliner.calculate_index(stock_df)
     if not os.path.exists(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH):
         os.mkdir(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH)
-    appended_stock_df.to_hdf(os.path.join(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH, Index_Class_Constant.INDEX_HISTORY_STOCK_NAME), mode ='a', key = stock_id)
+    appended_stock_df.to_hdf(index_history_file, mode ='a', key = stock_id)
 

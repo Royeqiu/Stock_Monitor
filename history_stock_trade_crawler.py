@@ -9,6 +9,10 @@ import pandas as pd
 
 current_time = datetime.datetime.now()
 stock_list = pd.read_csv(os.path.join(General_Constant.ASSETS_PATH, General_Constant.STOCK_LIST_FILE_NAME))
+history_stock_trade_file = os.path.join(History_Stock_Constant.HISTORY_STOCK_TRADE_PATH,
+                                        History_Stock_Constant.HISTORY_STOCK_LIST_NAME)
+if os.path.exists(history_stock_trade_file):
+    os.remove(history_stock_trade_file)
 for i in stock_list.index:
     if i % 100 == 0:
         print('{} stock history has been crawled'.format(i))
