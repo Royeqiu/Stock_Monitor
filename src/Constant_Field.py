@@ -27,6 +27,8 @@ class History_Stock_Constant():
 class General_Constant():
     ASSETS_PATH = 'assets/'
     STOCK_LIST_FILE_NAME = 'stock_list.csv'
+    COMPANY_OTC_TYPE = 'otc'
+    COMPANY_SII_TYPE = 'sii'
 
 class Index_Class_Constant():
     MEAN_INDEX_NAME = 'mean_index'
@@ -48,3 +50,21 @@ class Technological_Index_Constant():
         INDEX_NAMES = ["20_means", "30_means", "50_means", "100_means", "200_means"]
         MEAN_DAY_RANGE = [20, 30, 50, 100, 200]
 
+class Company_Monthly_Earning_Constant():
+
+    SII_EARNING_URL_AFTER_IFRS = 'https://mops.twse.com.tw/nas/t21/sii/t21sc03_{}_{}_0.html'
+    SII_EARNING_URL_BEFORE_IFRS = 'https://mops.twse.com.tw/nas/t21/sii/t21sc03_{}_{}.html'
+    OTC_EARNING_URL_AFTER_IFRS = 'https://mops.twse.com.tw/nas/t21/otc/t21sc03_{}_{}_0.html'
+    OTC_EARNING_URL_BEFORE_IFRS = 'https://mops.twse.com.tw/nas/t21/otc/t21sc03_{}_{}.html'
+    REPORT_STRUCTURAL_LEVELS = 'levels'
+    COMPANY_NUMBER_COLUMN = '公司代號'
+    CURRENT_MONTHLY_EARNING_COLUMN = '當月營收'
+    TOTAL_EARNING_COLUMN = '合計'
+    HISTORY_EARNING_REPORT_PATH = 'history_earning_report'
+    MONTHLY_HISTORY_EARNING_REPORT_FILE_NAME = 'monthly_earning_report_{}_{}.csv'
+
+
+class Error_MSG():
+    class Company_Monthly_Earning_Error():
+        COMPANY_TYPE_VALUE_ERROR = 'The type only accpet sii or otc'
+        REPORT_DATE_OVER_CURRENT_DATE_ERROR =  'Report date over current date'
