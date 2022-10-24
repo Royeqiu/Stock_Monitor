@@ -9,3 +9,5 @@ def get_current_date(type='datetime'):
     else:
         current_time = datetime.datetime.now()
         return current_time.year, current_time.month, current_time.day
+
+

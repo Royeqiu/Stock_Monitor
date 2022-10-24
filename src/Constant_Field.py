@@ -8,10 +8,13 @@ class Market_Stock_Constant():
 class Daily_Stock_Constant():
     DAILY_STOCK_LIST_NAME = 'daily_stock_list_{}.csv'
     DAILY_STOCK_TRADE_PATH = 'daily_stock/'
-
-class Stock_Trade_Constant():
     STOCK_NUMBER_COLUMN = '證券代號'
     STOCK_NAME_COLUMN = '證券名稱'
+
+
+class Stock_Trade_Constant():
+    STOCK_NUMBER_COLUMN = 'stock_number'
+    STOCK_NAME_COLUMN = 'stock_name'
     STOCK_CLOSE_COLUMN = 'Close'
     STOCK_HIGH_COLUMN = 'High'
     STOCK_OPEN_COLUMN = 'Open'
@@ -62,7 +65,8 @@ class Company_Monthly_Earning_Constant():
     TOTAL_EARNING_COLUMN = '合計'
     HISTORY_EARNING_REPORT_PATH = 'history_earning_report'
     MONTHLY_HISTORY_EARNING_REPORT_FILE_NAME = 'monthly_earning_report_{}_{}.csv'
-
+    MOM_PERCENTAGE_CHANGE = '上月比較增減(%)'
+    MONTH = 'month'
 
 class Error_MSG():
     class Company_Monthly_Earning_Error():

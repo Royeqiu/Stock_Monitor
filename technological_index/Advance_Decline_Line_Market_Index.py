@@ -17,23 +17,26 @@ class Advance_Decline_Line_Index(Base_Market_Index):
             if stock_index % 50 == 0:
                 print('{} stock has been processed'.format(stock_index))
             key_id = stock_id + '.TW'
-            stock_df = pd.read_hdf(os.path.join(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH,Index_Class_Constant.INDEX_HISTORY_STOCK_NAME),key=key_id)
-            tail_df = stock_df.tail(date_range)
-            for index in range(date_range - 1, -1, -1):
-                if index >= tail_df.shape[0]:
-                    continue
-                date = tail_df.iloc[index][Stock_Trade_Constant.STOCK_DATE_COLUMN]
-                stock_price = tail_df.iloc[index][Stock_Trade_Constant.STOCK_CLOSE_COLUMN]
-                for mean_name in mean_index_names:
-                    if stock_price >= tail_df.iloc[index][mean_name] and tail_df.iloc[index][mean_name]!=0:
-                        company_count_dict[date][mean_name][1] += 1
-                    elif stock_price < tail_df.iloc[index][mean_name] and tail_df.iloc[index][mean_name]!=0:
-                        company_count_dict[date][mean_name][0] += 1
-                    else:
-                        pass
+            try:
+                stock_df = pd.read_hdf(os.path.join(Index_Class_Constant.INDEX_HISTORY_STOCK_PATH,Index_Class_Constant.INDEX_HISTORY_STOCK_NAME),key=key_id)
+                tail_df = stock_df.tail(date_range)
+                for index in range(date_range - 1, -1, -1):
+                    if index >= tail_df.shape[0]:
+                        continue
+                    date = tail_df.iloc[index][Stock_Trade_Constant.STOCK_DATE_COLUMN]
+                    stock_price = tail_df.iloc[index][Stock_Trade_Constant.STOCK_CLOSE_COLUMN]
+                    for mean_name in mean_index_names:
+                        if stock_price >= tail_df.iloc[index][mean_name] and tail_df.iloc[index][mean_name]!=0:
+                            company_count_dict[date][mean_name][1] += 1
+                        elif stock_price < tail_df.iloc[index][mean_name] and tail_df.iloc[index][mean_name]!=0:
+                            company_count_dict[date][mean_name][0] += 1
+                        else:
+                            pass
+            except:
+                pass
         res_dict = dict()
         res_dict[Stock_Trade_Constant.STOCK_DATE_COLUMN] = tail_df[Stock_Trade_Constant.STOCK_DATE_COLUMN].values
-        ADL_index_names = Technological_Index_Constant.Mean_Stock_Index_Constant.INDEX_NAMES
+        ADL_index_names = Technological_Index_Constant.Advance_Decline_Line_Market_Index_Constant.INDEX_NAMES
         for mean_name, ADL_name in zip(mean_index_names, ADL_index_names):
             tmp_res = []
             for date in tail_df[Stock_Trade_Constant.STOCK_DATE_COLUMN]:
