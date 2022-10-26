@@ -3,7 +3,7 @@ import pandas as pd
 from technological_index.Base_Stock_Index import Base_Stock_Index
 from src.Constant_Field import Stock_Trade_Constant
 from src.Constant_Field import Technological_Index_Constant
-class MEAN_Stock_Index(Base_Stock_Index):
+class Mean_Stock_Index(Base_Stock_Index):
     def __init__(self):
         self.index_names = Technological_Index_Constant.Mean_Stock_Index_Constant.INDEX_NAMES
         self.mean_day_range = Technological_Index_Constant.Mean_Stock_Index_Constant.MEAN_DAY_RANGE

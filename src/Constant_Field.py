@@ -38,7 +38,7 @@ class Index_Class_Constant():
     INDEX_HISTORY_STOCK_PATH = 'index_history_stock/'
     INDEX_HISTORY_STOCK_NAME = 'index_history_stock.h5'
     ADL_INDEX_NAME = 'ADL_Index'
-
+    OVER_MEAN_INDEX_NAME = 'over_mean_index'
 class Technological_Index_Constant():
     class Basic_Market_Index_Constant():
         TEN_DAYS_RANGE = 10
@@ -51,6 +51,9 @@ class Technological_Index_Constant():
         INDEX_NAMES = ["20_ADL", "30_ADL", "50_ADL", "100_ADL", "200_ADL"]
     class Mean_Stock_Index_Constant():
         INDEX_NAMES = ["20_means", "30_means", "50_means", "100_means", "200_means"]
+        MEAN_DAY_RANGE = [20, 30, 50, 100, 200]
+    class Over_Mean_Stock_Index_Constant():
+        INDEX_NAMES = ["over_20_means", "over_30_means", "over_50_means", "over_100_means", "over_200_means"]
         MEAN_DAY_RANGE = [20, 30, 50, 100, 200]
 
 class Company_Monthly_Earning_Constant():
@@ -72,3 +75,10 @@ class Error_MSG():
     class Company_Monthly_Earning_Error():
         COMPANY_TYPE_VALUE_ERROR = 'The type only accpet sii or otc'
         REPORT_DATE_OVER_CURRENT_DATE_ERROR =  'Report date over current date'
+
+class Mongo_DB_Constant():
+
+    DB_NAME = 'market_info'
+    STOCK_TRADE_HISTORY_COLLECTION = 'stock_trade_history'
+    STOCK_INDEX_HISTORY_COLLECTION = 'stock_index_history'
+    MARKET_INDEX_COLLECTION = 'market_index'
