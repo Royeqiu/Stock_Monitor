@@ -14,7 +14,7 @@ class Over_Mean_Stock_Index(Base_Stock_Index):
             single_series = stock_trade_df[Stock_Trade_Constant.STOCK_CLOSE_COLUMN].rolling(day_range, center=False).mean().fillna(0)
             res = [1 if close_price > mean_price else 0 for close_price, mean_price in
              zip(stock_trade_df[Stock_Trade_Constant.STOCK_CLOSE_COLUMN].values, single_series.values)]
-            tmp_series = pd.Series([1 if close_price>mean_price else 0 for close_price,mean_price in zip(stock_trade_df[Stock_Trade_Constant.STOCK_CLOSE_COLUMN].values,single_series.values) ])
+            tmp_series = pd.Series(res)
             result_series.append(tmp_series)
 
         return (self.index_names,result_series)

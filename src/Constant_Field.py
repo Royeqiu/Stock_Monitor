@@ -39,6 +39,7 @@ class Index_Class_Constant():
     INDEX_HISTORY_STOCK_NAME = 'index_history_stock.h5'
     ADL_INDEX_NAME = 'ADL_Index'
     OVER_MEAN_INDEX_NAME = 'over_mean_index'
+
 class Technological_Index_Constant():
     class Basic_Market_Index_Constant():
         TEN_DAYS_RANGE = 10
@@ -64,11 +65,29 @@ class Company_Monthly_Earning_Constant():
     OTC_EARNING_URL_BEFORE_IFRS = 'https://mops.twse.com.tw/nas/t21/otc/t21sc03_{}_{}.html'
     REPORT_STRUCTURAL_LEVELS = 'levels'
     COMPANY_NUMBER_COLUMN = '公司代號'
+    COMPANY_NAME_COLUMN = '公司名稱'
+    EARNING_DATE = 'DATE'
+    CURRENT_CUMULATIVE_EARNING_COLUMN = '當月累計營收'
+    CURRENT_CUMULATIVE_EARNING_ENGLISH_COLUMN = 'current_month_cumulative_earning'
     CURRENT_MONTHLY_EARNING_COLUMN = '當月營收'
+    CURRENT_MONTHLY_EARNING_ENGLISH_COLUMN = 'current_month_earning'
     TOTAL_EARNING_COLUMN = '合計'
     HISTORY_EARNING_REPORT_PATH = 'history_earning_report'
     MONTHLY_HISTORY_EARNING_REPORT_FILE_NAME = 'monthly_earning_report_{}_{}.csv'
-    MOM_PERCENTAGE_CHANGE = '上月比較增減(%)'
+    MOM_PERCENTAGE_CHANGE_COLUMN = '上月比較增減(%)'
+    MOM_PERCENTAGE_CHANGE_ENGLISH_COLUMN = 'MOM'
+    YOY_PERCENTAGE_CHANGE_COLUMN = '去年同月增減(%)'
+    YOY_PERCENTAGE_CHANGE_ENGLISH_COLUMN = 'YOY'
+    YOY_CUMULATIVE_PERCENTAGE_CHANGE_COLUMN = '前期比較增減(%)'
+    YOY_CUMULATIVE_PERCENTAGE_CHANGE_ENGLISH_COLUMN = 'YOY_CUMULATIVELY'
+    LAST_MONTH_EARNING_COLUMN = '上月營收'
+    LAST_MONTH_EARNING_ENGLISH_COLUMN = 'last_month_earning'
+    LAST_YEAR_EARNING_COLUMN = '去年當月營收'
+    LAST_YEAR_EARNING_ENGLISH_COLUMN = 'last_year_earning'
+    LAST_YEAR_CUMULATIVE_EARNING_COLUMN = '去年累計營收'
+    LAST_YEAR_CUMULATIVE_EARNING_ENGLISH_COLUMN = 'last_year_cumulative_earning'
+    COMMENT_COLUMN = '備註'
+    COMMENT_ENGLISH_COLUMN = 'comment'
     MONTH = 'month'
 
 class Error_MSG():
